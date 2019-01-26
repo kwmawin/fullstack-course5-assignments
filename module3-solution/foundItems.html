@@ -1,0 +1,8 @@
+<h3>Found Items:</h3>
+<div class="error" ng-if="list.showError">Nothing found!</div>
+<ul>
+  <li ng-repeat="item in list.foundItems">
+    <button class="btn btn-primary" ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+    {{item.short_name}}: {{ item.name }} -- {{ item.description}}
+  </li>
+</ul>
