@@ -5,6 +5,7 @@
 	<div> Email      : {{myInfoCtrl.savedInfo.user.email}} </div>
 	<div> Phone#     : {{myInfoCtrl.savedInfo.user.phone}} </div>
 	<div> My favorite Dish: {{myInfoCtrl.savedInfo.menuItem.name}} </div>
+	<div> {{myInfoCtrl.savedInfo.menuItem.description}} </div>
 	<img width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.savedInfo.menuItem.short_name}}.jpg" alt="{{myInfoCtrl.savedInfo.menuItem.name}}">
 </div>
 <div class="text-center" ng-if="!myInfoCtrl.savedInfo.completed"> 
