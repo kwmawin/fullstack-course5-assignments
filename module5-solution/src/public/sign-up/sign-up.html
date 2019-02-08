@@ -1,0 +1,80 @@
+<h2 class="text-center"> Sign up to get newsletter from our restaurant! </h2>
+
+<div id="sign-up-form">
+	<fieldset>
+	<form name='regForm' novalidate>
+	<input type="text" name="firstname" placeholder="First name"
+	  ng-model="signUpCtrl.user.firstname"
+	  required>
+	  <span class="err-msg"
+	    ng-if="(regForm.firstname.$error.required) && regForm.firstname.$touched">
+	    First name is required
+	  </span>
+	  <br>
+
+	 <input type="text" name="lastname" placeholder="Last name"
+	  ng-model="signUpCtrl.user.lastname"
+	  required>
+	  <span class="err-msg"
+	    ng-if="(regForm.lastname.$error.required) && regForm.lastname.$touched">
+	    Last name is required
+	  </span>
+	  <br>
+
+	<input type="email" name="email" placeholder="Email"
+	  ng-model="signUpCtrl.user.email"
+	  required>
+	  <span class="err-msg"
+	   	ng-if="regForm.email.$invalid && regForm.email.$touched">
+	    Must be a valid email address: handle@domain format
+	  </span>
+	  <br>
+
+	<input type="text" name="phone" placeholder="Phone ###-###-####"
+	  ng-model="signUpCtrl.user.phone"
+	  pattern="(\d{3})-(\d{3})-(\d{4})"
+	  required>
+	  <span  class="err-msg"
+	  	ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+	    Phone must be in the format ###-###-####.
+	  </span>
+	  <br>
+
+	<input type="text" name="menuitem" placeholder="Favorite dish"
+	  ng-model="signUpCtrl.user.menuitem"
+	  required>
+	  <span  class="err-msg"
+	    ng-if="(regForm.menuitem.$error.required) && regForm.menuitem.$touched">
+	    Favorite dish is required
+	  </span>
+	  <span class="err-msg"
+	    ng-if="signUpCtrl.menuItemError">
+	    No such item in the menu: {{signUpCtrl.user.menuitem}}
+	  </span>
+	  <br>
+
+	<button class="btn btn-primary" ng-disabled="regForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
+
+	</form>
+	</fieldset>
+
+	<div id="info" ng-if="signUpCtrl.completed"> 
+		<div> Your information has been saved: </div>
+	</div>
+</div>
+
+<!-- <div class="container">
+  <h2 id="menu-categories-title" class="text-center">
+    {{ menuItemsCtrl.menuItems.category.name}} Menu
+  </h2>
+  <div class="text-center">
+    {{ menuItemsCtrl.menuItems.category.special_instructions}}
+  </div>
+
+  <menu-item ng-repeat="menuItem in menuItemsCtrl.menuItems.menu_items"
+             menu-item="menuItem">
+  </menu-item>
+
+
+</div>
+ -->
